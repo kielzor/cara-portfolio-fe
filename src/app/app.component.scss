@@ -1,0 +1,9 @@
+@import './helpers/ag-theme.scss';
+
+app-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-green;
+  height: 80vh;
+}
