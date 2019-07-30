@@ -1,18 +1,28 @@
 <div class="header-container">
-  <div>
-    <h1 class="header-title header-title-gen">
-      Cara Dehnert Huffman
-    </h1>
-    <h2 class="header-subtitle header-title-gen">
-      {{subTitle}}
-    </h2>
+  <div class="header-inner-container">
+      <h1 class="header-title header-title-gen">
+        name of company
+      </h1>
+      <h2 class="header-subtitle header-title-gen">
+        subtitle for company
+      </h2>
   </div>
-  <div class="nav-container">
-    <h3>About</h3>
-    <h3>Services</h3>
-    <h3>Testimonials</h3>
-    <h3>Certifications</h3>
-    <h3>Q & A</h3>
-    <h3>Contact</h3>
+</div>
+<div class="main">
+  <div class="main-container">
+    <div class="nav-container">
+      <button class="top-button" [ngClass]="{'clicked': nav === 'about'}" (click)="handleClick('about')">About</button>
+      <button [ngClass]="{'clicked': nav === 'services'}" (click)="handleClick('services')">Services</button>
+      <button [ngClass]="{'clicked': nav === 'testimonials'}" (click)="handleClick('testimonials')">Testimonials</button>
+      <button [ngClass]="{'clicked': nav === 'contact'}" (click)="handleClick('contact')">Contact</button>
+      <!-- <button (click)="handleClick('qa')">Q & A</button> -->
+      <!-- <button (click)="handleClick('certifications')">Certifications</button> -->
+    </div>
+    <div class="right-section">
+      <app-about *ngIf="nav === 'about'"></app-about>
+      <app-services *ngIf="nav === 'services'"></app-services>
+      <app-testimonials *ngIf="nav === 'testimonials'"></app-testimonials>
+      <app-contact-form *ngIf="nav === 'contact'"></app-contact-form>
+    </div>
   </div>
 </div>
